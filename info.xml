@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding="ISO-8859-1"?>
+<jtlshop3plugin>
+	<Name>Timeline</Name>
+	<Description>Integriert eine schicke Timeline in Ihren Shop.</Description>
+	<Author>Kreativkonzentrat GbR, Felix Moche</Author>
+	<URL>http://www.kreativkonzentrat.de</URL>
+	<XMLVersion>100</XMLVersion>
+	<ShopVersion>313</ShopVersion>
+	<PluginID>kk_timeline</PluginID>
+	<Install>
+		<Version nr="100">
+			<CreateDate>2012-07-18</CreateDate>
+		</Version>
+		<Hooks>
+			<Hook id="140">140_timeline.php</Hook>
+		</Hooks>
+		<Locales>
+			<Variable>
+				<Name>kk_timeline_init_headline</Name>
+				<Description>Die Überschrift des ersten Timeline-Eintrags</Description>
+				<VariableLocalized iso="GER">Hallo Welt!</VariableLocalized>
+				<VariableLocalized iso="ENG">Hello World!</VariableLocalized>
+			</Variable>
+			<Variable>
+				<Name>kk_timeline_init_text</Name>
+				<Description>Dieser Text wird als erster Timeline-Eintrag angezeigt</Description>
+				<VariableLocalized iso="GER">Willkommen in unserem Shop.</VariableLocalized>
+				<VariableLocalized iso="ENG">Welcome.</VariableLocalized>
+			</Variable>
+			<Variable>
+				<Name>kk_timeline_init_image</Name>
+				<Description>URL zum inititalen Bild (inkl. http://)</Description>
+				<VariableLocalized iso="GER"> </VariableLocalized>
+				<VariableLocalized iso="ENG"> </VariableLocalized>
+			</Variable>
+		</Locales>
+		<Adminmenu>
+			<Settingslink sort="1">
+				<Name>Einstellungen</Name>
+				<Setting type="text" initialValue="500" sort="1" conf="Y">
+					<Name>Text kürzen nach X Zeichen</Name>
+					<Description>Maximale Länge an Zeichen für Text innerhalb von Timeline-Einträgen</Description>
+					<ValueName>kk_timeline_max_chars</ValueName>
+				</Setting>
+				<Setting type="selectbox" initialValue="append" sort="2" conf="Y">
+					<Name>PHP-Query Funktion</Name>
+					<Description>PHP-Query Funktion</Description>
+					<ValueName>kk_timeline_php_query_function</ValueName>
+					<SelectboxOptions>
+						<Option value="append" sort="1">append</Option>
+						<Option value="prepend" sort="2">prepend</Option>
+						<Option value="after" sort="3">after</Option>
+						<Option value="before" sort="4">before</Option>
+						<Option value="replaceWith" sort="5">replaceWith</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="text" initialValue="#content" sort="3" conf="Y">
+					<Name>ID des zu ersetzenden Elements</Name>
+					<Description>Der zugehörige Selektor</Description>
+					<ValueName>kk_timeline_selector</ValueName>
+				</Setting>
+				<Setting type="selectbox" initialValue="Y" sort="4" conf="Y">
+					<Name>News-Einträge in Timeline anzeigen?</Name>
+					<Description>Sollen News-Einträge in der Timeline angezeigt werden?</Description>
+					<ValueName>kk_timeline_show_news</ValueName>
+					<SelectboxOptions>
+						<Option value="Y" sort="1">Ja</Option>
+						<Option value="N" sort="2">Nein</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="text" initialValue="10" sort="5" conf="Y">
+					<Name>Maximale Anzahl News-Einträge</Name>
+					<Description>Wieviele News-Einträge sollen angezeigt werden?</Description>
+					<ValueName>kk_timeline_limit_news</ValueName>
+				</Setting>
+				<Setting type="selectbox" initialValue="N" sort="6" conf="Y">
+					<Name>Produkte in Timeline anzeigen?</Name>
+					<Description>Sollen Produkte in der Timeline angezeigt werden?</Description>
+					<ValueName>kk_timeline_show_products</ValueName>
+					<SelectboxOptions>
+						<Option value="Y" sort="1">Ja</Option>
+						<Option value="N" sort="2">Nein</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="text" initialValue="10" sort="7" conf="Y">
+					<Name>Maximale Anzahl Produkte</Name>
+					<Description>Wieviele Produkte sollen angezeigt werden?</Description>
+					<ValueName>kk_timeline_limit_products</ValueName>
+				</Setting>
+				<Setting type="text" initialValue="" sort="11" conf="Y">
+					<Name>Bild-Copyright</Name>
+					<Description>Dieser Text wird als kleiner Text unter den Bildern angezeigt</Description>
+					<ValueName>kk_timeline_copyright</ValueName>
+				</Setting>
+				<Setting type="selectbox" initialValue="Y" sort="12" conf="Y">
+					<Name>Beginnen am</Name>
+					<Description>Am Anfang oder am Ende beginnen?</Description>
+					<ValueName>kk_timeline_begin_at</ValueName>
+					<SelectboxOptions>
+						<Option value="0" sort="1">Anfang</Option>
+						<Option value="1" sort="2">Ende</Option>
+					</SelectboxOptions>
+				</Setting>
+				<Setting type="text" initialValue="0" sort="13" conf="Y">
+					<Name>Starte bei Slide Nr.</Name>
+					<Description>Nummer des ersten Slides (beginnend bei 0)</Description>
+					<ValueName>kk_timeline_begin_at_slide</ValueName>
+				</Setting>
+			</Settingslink>
+		</Adminmenu>
+	</Install>
+</jtlshop3plugin>
